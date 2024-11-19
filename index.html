@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>M3U8 播放器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="player-container">
+            <h1>M3U8 播放器</h1>
+            <h2 id="currentEpisode">当前播放： 无</h2>
+            <div class="input-group">
+                <button class="prevEpisodeButton" id="prevEpisodeButton">上一集</button>
+                <input type="text" id="m3u8Url" placeholder="请输入M3U8播放地址">
+                <button class="playButton" id="playButton">播放</button>
+                <button class="nextEpisodeButton" id="nextEpisodeButton">下一集</button>
+            </div>
+            <video id="videoPlayer" controls></video>
+        </div>
+
+        <div class="sidebar">
+            <div class="episodes-container">
+                <h2>剧集列表</h2>
+                <ul id="episodesList">
+                    <!-- 动态生成剧集列表 -->
+                </ul>
+            </div>
+
+            <div class="history-container">
+                <h2>观看历史</h2>
+                <button id="clearHistoryButton">清除历史记录</button>
+                <ul id="historyList">
+                    <!-- 观看历史列表项 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        使用 <a href="https://github.com/video-dev/hls.js/" target="_blank">Hls.js</a> 构建
+    </div>
+
+    <!-- 引入 Hls.js 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
